@@ -14,6 +14,8 @@ client = MongoClient("mongodb+srv://Kath:U6JyKLiHYMd4qMNc@cluster0.opmhnpl.mongo
 db = client['Cluster0']
 user_collection = db["users"]
 
+# ========================================= Usuarios ==========================================
+
 @app.route("/api/ferremas/createuser", methods=["POST"])
 def create_user():
     new_user = request.get_json()
@@ -86,6 +88,10 @@ def delete(user_id):
         return jsonify({"status" : "Usuario eliminado con exito"}),204
     else:
         return "",404
+    
+# ========================================= Productos ==========================================
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
